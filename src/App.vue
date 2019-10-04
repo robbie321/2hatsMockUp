@@ -27,10 +27,10 @@
     </v-content>
     <v-footer class="white" padless>
       <v-container>
-        <v-card class="flex" flat tile>
+        <v-card class="flex" style="margin-top:60px" flat tile>
           <!-- <v-card-title class="white"></v-card-title> -->
           <v-layout>
-            <v-flex md2>
+            <v-flex md3 xs7>
               <ul>
                 <li class="heading">INFO</li>
                 <br />
@@ -39,7 +39,7 @@
                 <li>Contact</li>
               </ul>
             </v-flex>
-            <v-flex md2>
+            <v-flex md3 xs7>
               <ul>
                 <li class="heading">CATEGORIES</li>
                 <br />
@@ -48,7 +48,7 @@
                 <li>UX Stuff</li>
               </ul>
             </v-flex>
-            <v-flex md2>
+            <v-flex md3 xs7>
               <ul>
                 <li class="heading">FOLLOW</li>
                 <br />
@@ -84,13 +84,19 @@ export default {
   }
 };
 </script>
-<style  scoped>
+<style  >
 ul {
   list-style-type: none;
 }
-
+li {
+  font-size: 2vh;
+}
 .heading {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Courier", Courier, monospace;
   color: #aca9a9;
+  font-size: 2vh;
+}
+footer {
+  font-family: "Raleway", sans-serif;
 }
 </style>

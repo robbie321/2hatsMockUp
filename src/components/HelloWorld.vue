@@ -1,24 +1,43 @@
 <template>
   <div>
     <div class="jumbotron">
-      <h1 style="margin-top:-20px; letter-spacing:8px; color:white; font-size: 2vw;">
-        <img src="https://img.icons8.com/ios/50/FFFFFF/maple-leaf.png" />MOKUZAI
-      </h1>
+      <v-layout row>
+        <v-flex xs8 md4 sm8>
+          <h1 class="logoText">
+            <img
+              style="width: 10%; height:auto;"
+              src="https://img.icons8.com/ios/50/FFFFFF/maple-leaf.png"
+            />
+            MOKUZAI
+          </h1>
+        </v-flex>
+
+        <v-flex text-right>
+          <v-btn small text style="margin-top:-40px;">
+            <v-icon style="font-size:15px" color="white">fas fa-search</v-icon>
+          </v-btn>
+          <v-btn small text style="margin-top:-40px">
+            <v-icon style="font-size:15px;" color="white">fas fa-bars</v-icon>
+          </v-btn>
+        </v-flex>
+      </v-layout>
+
       <v-container>
-        <h1
-          style="margin-top:80px; letter-spacing:3px; color:white; font-size: 2vw;"
-        >Great design is elimination all unnecessary details</h1>
-        <h1
-          style="margin-bottom: 150px;letter-spacing:3px; color:white; font-size: 1vw;"
-        >-MINH D. TRAN</h1>
+        <v-layout class="fullScreen">
+          <v-flex xs11 md9>
+            <h1 class="headerText">Great design is eliminating all unnecessary details</h1>
+            <br />
+            <h1 class="headerTagText">-MINH D. TRAN</h1>
+          </v-flex>
+        </v-layout>
       </v-container>
     </div>
 
     <v-container>
       <v-layout justify-center row>
-        <v-btn style="margin-bottom:50px; margin-top:-40px" text>MOST POPULAR</v-btn>
-        <v-btn style="margin-bottom:50px; margin-top:-40px" text>LOWEST PRICE</v-btn>
-        <v-btn style="margin-bottom:50px; margin-top:-40px" text>HIGHEST PRICE</v-btn>
+        <v-btn class="ItemOrder" text>MOST POPULAR</v-btn>
+        <v-btn class="ItemOrder" text>LOWEST PRICE</v-btn>
+        <v-btn class="ItemOrder" text>HIGHEST PRICE</v-btn>
       </v-layout>
       <div class="block">
         <v-layout justify-center row wrap class="items">
@@ -34,7 +53,7 @@
                 </v-container>
               </v-card>
               <div>
-                <v-card-text>
+                <v-card-text class="ItemTitle">
                   {{item.title}}
                   <br />
                   <span class="price">$ {{item.price}}</span>
@@ -169,8 +188,8 @@ export default {
 .jumbotron {
   background: white;
   background-image: url(https://firebasestorage.googleapis.com/v0/b/production2hats.appspot.com/o/studentPortal%2Fassessment-web-design%2Fhero.png?alt=media&token=83f29b93-3c2e-4e50-8641-0eda16a0d960);
-  /* background-size: cover; */
-  width: 100%;
+  background-size: cover;
+  max-width: 100%;
   height: auto;
   border: 20px;
   border-style: solid;
@@ -201,9 +220,50 @@ export default {
     margin: auto;
   }
 }
-
+@media screen and (min-width: 800px) {
+  .ItemTitle {
+    font-family: "Raleway", sans-serif;
+    font-size: 1vw;
+  }
+}
+@media screen and (max-width: 799px) {
+  .ItemTitle {
+    font-family: "Raleway", sans-serif;
+    font-size: 4vw;
+  }
+}
 .price {
   font-family: "Courier New", Courier, monospace;
   color: #7e7e7e;
+}
+.headerText {
+  font-family: "Raleway", sans-serif;
+  margin-top: 80px;
+  letter-spacing: 3px;
+  color: white;
+  font-size: 4vw;
+}
+.headerTagText {
+  font-family: "Noticia Text", serif;
+  margin-bottom: 150px;
+  letter-spacing: 3px;
+  color: grey;
+  font-size: 1.5vw;
+}
+.logoText {
+  margin-top: -20px;
+  letter-spacing: 8px;
+  color: white;
+  font-size: 2vw;
+}
+@media screen and (min-width: 800px) {
+  .fullScreen {
+    margin-left: 120px;
+  }
+}
+
+.ItemOrder {
+  margin-bottom: 50px;
+  margin-top: -40px;
 }
 </style>
